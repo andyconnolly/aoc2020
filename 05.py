@@ -1,4 +1,4 @@
-d = [int(x.strip().replace('B','1').replace('F','0').replace('L','0').replace('R','1'), 2) for x in open("05input.txt","r")]
+d = {int(x.strip().replace('B','1').replace('F','0').replace('L','0').replace('R','1'), 2) for x in open("05input.txt","r")}
 
 def part1(data):
     max_ID = 0
@@ -8,7 +8,7 @@ def part1(data):
 
 def part2(data):
     for seat in data:
-        if (seat + 1 not in seats) and (seat + 2 in seats):
+        if (seat + 1 not in data) and (seat + 2 in data):
             return seat + 1
 
 print(part1(d))
